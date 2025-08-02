@@ -16,7 +16,7 @@ async def run_rag(request: RAGRequest):
     for q in request.questions:
         context = chunks.get(q, "")
         lol = ask_gemini(context, q)
-        answer = lol.text.strip() if lol.text else "No answer found."
+        answer = lol.strip() if lol else "No answer found"
         responses.append(answer)
         
     return {"answers": responses}
