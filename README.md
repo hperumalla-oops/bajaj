@@ -33,3 +33,25 @@ or this in postman
 
 
 after cloning, change the api key in the .env file
+
+
+
+output should kinda be
+```
+{
+    "answers": [
+        "The grace period for premium payment is thirty days.",
+        "Expenses related to the treatment of a Pre-Existing Disease (PED) and its direct complications shall be excluded until the expiry of thirty-six (36) months of continuous coverage after the date of inception of the first policy.",
+        "Yes, maternity expenses are covered if the female insured has been continuously covered for at least 24 months. Ectopic pregnancy is included if medically established. Exclusions apply, such as age limits (below 18, above 45) and a 24-month waiting period for delivery/termination (except accident).",
+        "The waiting period for cataract surgery is two years.",
+        "Yes, the medical expenses incurred for an organ donor's hospitalization during the policy period for harvesting an organ donated to an Insured Person are covered, provided the donation conforms to the Transplantation of Human Organs Act 1994 and other specified conditions.",
+        "A flat 5% No Claim Discount (NCD) is allowed on the base premium for renewal of policies with a term of one year, provided claims are not reported in the expiring policy. For policies exceeding one year, the NCD amount is given with respect to each claim-free policy year.",
+        "Yes, expenses for health check-ups shall be reimbursed at the end of a block of two continuous policy years, provided the policy has been continuously renewed without a break. These expenses are subject to the limit stated in the Table of Benefits.",
+        "The policy defines an AYUSH Hospital as a standalone or co-located facility registered with local authorities, supervised by a qualified AYUSH Medical Practitioner. It must have at least 5 in-patient beds, a qualified practitioner round the clock, dedicated therapy sections, and accessible daily patient records.",
+        "AYUSH Treatment refers to medical and/or Hospitalisation treatments provided under Ayurveda, Yoga and Naturopathy, Unani, Siddha, and Homeopathy systems.",
+        "Yes, room charges and intensive care unit charges per day for Plan A are payable up to the limit as shown in the Table of Benefits."
+    ]
+}
+```
+
+
