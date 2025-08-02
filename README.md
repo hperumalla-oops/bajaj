@@ -1,6 +1,5 @@
-# bajaj
-LLM-Powered Intelligent Query–Retrieval System 
-
+# jajab
+nfekjnfkjenjnwefnjn
 
 put this in your cmd to test
 
