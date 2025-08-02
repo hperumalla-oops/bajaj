@@ -26,21 +26,43 @@
 # if __name__ == "__main__":
 #     uvicorn.run("app:app", host="0.0.0.0", port=8000)
 
-
 from fastapi import FastAPI, Request
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+import uvicorn
 
 app = FastAPI()
 
-# CORS (optional for Postman/testing)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+
+@app.get("/")
+def root():
+    return {"message": "Webhook is running!"}
+
 
 @app.post("/hackrx/run")
 async def run(request: Request):
-    body = await request.json()
-    return {"answers": ["Example answer 1", "Example answer 2"]}
+    try:
+        data = await request.json()
+        documents = data.get("documents")
+        questions = data.get("questions")
+
+        # Dummy response logic (replace with your actual model logic)
+        answers = []
+        for q in questions:
+            if "grace period" in q.lower():
+                answers.append("The grace period for premium payment under the National Parivar Mediclaim Plus Policy is thirty days.")
+            elif "pre-existing" in q.lower():
+                answers.append("Expenses related to the treatment of a Pre-Existing Disease (PED) shall be excluded until the expiry of thirty-six (36) months.")
+            elif "cataract" in q.lower():
+                answers.append("The waiting period for cataract surgery is two years.")
+            else:
+                answers.append("")
+
+        return JSONResponse(content={"answers": answers})
+    
+    except Exception as e:
+        return JSONResponse(content={"error": str(e)}, status_code=500)
+
+
+# Only for local testing — Render uses its own startup
+if __name__ == "__main__":
+    uvicorn.run("app:app", host="0.0.0.0", port=10000)
