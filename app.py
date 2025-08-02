@@ -2,6 +2,8 @@ from pydantic import BaseModel
 from retriever import get_relevant_chunks
 from model import ask_gemini
 import uvicorn
+from fastapi import FastAPI, Request
+
 
 app = FastAPI()
 
