@@ -36,7 +36,7 @@ after cloning, change the api key in the .env file
 
 
 
-output should kinda be
+current o/p looks like this
 ```
 {
     "answers": [
