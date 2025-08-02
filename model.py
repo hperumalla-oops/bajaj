@@ -15,7 +15,9 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 def ask_gemini(context, question):
     prompt = f"""
 You are answering a question based on a document.
-
+        - Each answer must not exceed 50 words and it must come from the document.
+       - Stick closely to the source context provided.
+        - Do NOT add explanations, only answers.
 Context:
 {context}
 
