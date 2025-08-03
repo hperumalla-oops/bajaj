@@ -8,7 +8,7 @@ PINECONE_API_KEY="pcsk_3X8XUZ_RSpbXcrtAba1gUeYBCmvKwaZQN7S8RvvXHcUGScsWnbw4Z45CU
 
 pc = Pinecone(api_key=PINECONE_API_KEY)
 
-index_name = "quickstart-py"
+index_name = "jajab-yaya"
 if not pc.has_index(index_name):
     pc.create_index_for_model(
         name=index_name,
@@ -112,6 +112,7 @@ def get_relevant_chunks(url,questions):
 # doc="https://hackrx.blob.core.windows.net/assets/policy.pdf?sv=2023-01-03&st=2025-07-04T09%3A11%3A24Z&se=2027-07-05T09%3A11%3A00Z&sr=b&sp=r&sig=N4a9OU0w0QXO6AOIBiu4bpl7AXvEZogeT%2FjUHNO7HzQ%3D"
 
 # get_relevant_chunks(doc,questions)
+
 
 
 
