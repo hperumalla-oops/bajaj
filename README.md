@@ -53,7 +53,25 @@ current o/p looks like this
 }
 ```
 
+using pinecone db
 
-current issue--- response is tumba slow, 1min 48secs
+```
+{
+    "answers": [
+        "The grace period for payment of the premium shall be thirty days.",
+        "The waiting period for pre-existing diseases to be covered is after the expiry of thirty six (36) months, provided they were declared at application and accepted.",
+        "Yes, the policy covers maternity expenses. Conditions include: the female insured person must be continuously covered for 24 months, be between 18 and 45 years old, and limited to two deliveries/terminations. Exclusions apply, such as a 24-month waiting period (waivable for accident), more than one delivery per policy period, and ectopic pregnancy.",
+        "The waiting period for cataract surgery is two years.",
+        "Yes, the medical expenses incurred for an organ donor's hospitalization during the policy period for harvesting an organ donated to an insured person are covered, provided certain conditions are met, such as confirming to the Transplantation of Human Organs Act 1994.",
+        "A No Claim Discount (NCD) of a flat 5% is allowed on the base premium upon renewal of policies with a term of one year, provided no claims were reported in the expiring policy. For policies exceeding one year, the aggregated NCD shall not exceed flat 5% of the total base premium for the term.",
+        "Yes, expenses for health check-ups are reimbursed at the end of every two continuous policy years, provided the policy has been continuously renewed without a break. The reimbursement is subject to limits stated in the Table of Benefits, ranging from INR 5,000 to INR 10,000.",
+        "A Hospital is an institution for in-patient and day care treatment of disease/injuries, registered with local authorities under the Clinical Establishments Act, 2010, OR meeting specific criteria. These criteria include qualified nursing/medical staff, minimum beds (10 or 15), a fully equipped operation theatre, and maintained patient records.",
+        "The Company shall indemnify Medical Expenses incurred for Inpatient Care treatment under Ayurveda, Yoga and Naturopathy, Unani, Siddha and Homeopathy systems of medicines during each Policy Period up to the limit of Sum Insured as specified in the Policy Schedule in any AYUSH Hospital.",
+        "Yes, for Plan A, room charges are limited to 1% of SI, max. INR 5,000 per day. ICU charges are limited to 2% of SI or actual, whichever is lower. These limits do not apply for listed procedures in a Preferred Provider Network as a package."
+    ]
+}
+```
+current issue--- response is tumba slow, 55secs per request
+
 
 
