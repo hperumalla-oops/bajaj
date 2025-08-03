@@ -77,7 +77,7 @@ def search_pinecone(q, dense_index):
     }
     )
     for hit in results['result']['hits']:
-        print(f"{hit['fields']['chunk_text']:<50}")
+        #print(f"{hit['fields']['chunk_text']:<50}")
         ans.append(f"{hit['fields']['chunk_text']:<50}")
 
     return ans
@@ -112,6 +112,7 @@ def get_relevant_chunks(url,questions):
 # doc="https://hackrx.blob.core.windows.net/assets/policy.pdf?sv=2023-01-03&st=2025-07-04T09%3A11%3A24Z&se=2027-07-05T09%3A11%3A00Z&sr=b&sp=r&sig=N4a9OU0w0QXO6AOIBiu4bpl7AXvEZogeT%2FjUHNO7HzQ%3D"
 
 # get_relevant_chunks(doc,questions)
+
 
 
 
