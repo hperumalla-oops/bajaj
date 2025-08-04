@@ -2,6 +2,6 @@ fastapi
 uvicorn
 PyPDF2
 scikit-learn
-google-generativeai
 requests
 python-dotenv
+
