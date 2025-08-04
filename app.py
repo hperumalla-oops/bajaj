@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from pinecone_sentencetrans import get_relevant_chunks
+from chroma_db import get_relevant_chunks
 from model import ask_gemini
 import uvicorn
 from fastapi import FastAPI, Request
@@ -21,7 +21,7 @@ async def run_rag(request: RAGRequest):
         answer = lol.strip() if lol else "No answer found"
         responses.append(answer)
         
-    return {"answers": responses}
+    return {"success": True, "answers": responses}
 
 # if __name__ == "__main__":
 #     uvicorn.run("app:app", host="0.0.0.0", port=8000)
