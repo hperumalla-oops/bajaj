@@ -1,16 +1,16 @@
-print("it shratteddd")
+# print("it shratteddd")
 import chromadb
-print("imported chroma db")
+# print("imported chroma db")
 from chromadb.config import Settings
-print("got settign from crhoma db")
+# print("got settign from crhoma db")
 
 
 from sentence_transformers import SentenceTransformer
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-print("imported sentr trans")
-print("model is loaded")
+# print("imported sentr trans")
+# print("model is loaded")
 
 
 
@@ -19,7 +19,7 @@ import numpy as np
 from utils import *
 
 chroma_client = chromadb.Client(Settings())
-print("client initialized")
+# print("client initialized")
 # model = SentenceTransformer('all-MiniLM-L6-v2')  # Or any embedding model
 
 def upsert_chunks_to_chroma(chunks):
@@ -57,11 +57,11 @@ def search_chroma(q, collection):
 
 def get_relevant_chunks(url,questions):
     path=download_pdf_from_url(url)
-    print("got path")
+    # print("got path")
     text = extract_text_from_pdf(path)
-    print("exctred text")
+    # print("exctred text")
     chunks = chunk_text(text)
-    print("chunked")
+    # print("chunked")
 
     collection=upsert_chunks_to_chroma(chunks)
 
@@ -69,7 +69,7 @@ def get_relevant_chunks(url,questions):
     for q in questions:
         # top_chunks = search_pinecone(q, namespace, dense_index)
         ans=search_chroma(q,collection)
-        print("djfisdjfidsjfijdsfujsdifjsdfjidsujfisdfj")
+        # print("djfisdjfidsjfijdsfujsdifjsdfjidsujfisdfj")
         output[q] = "\n\n".join(ans)
     return output
 
@@ -85,4 +85,5 @@ def get_relevant_chunks(url,questions):
 # doc="https://hackrx.blob.core.windows.net/assets/policy.pdf?sv=2023-01-03&st=2025-07-04T09%3A11%3A24Z&se=2027-07-05T09%3A11%3A00Z&sr=b&sp=r&sig=N4a9OU0w0QXO6AOIBiu4bpl7AXvEZogeT%2FjUHNO7HzQ%3D"
 
 # get_relevant_chunks(doc,questions)
+
 
