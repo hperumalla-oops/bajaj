@@ -2,17 +2,19 @@ from openai import OpenAI
 
 client = OpenAI(api_key="")
 
-def ask_openai(dict):
+def ask_openai(context, question):
     prompt = f"""
 You are answering a question based on a document.
-        - you are given a dictionary with question as key and value as context, use this to output a python list of answers in the same order as the questions, 
-        - do not repeat the questions in the answer
-        - answer all the questions, you can use context from other questions to answer a different questions if required
-        - Try to keep it below 50 words and do not explain, keept it brief
+        - Try to keep it below 50 words
+        - keep almost the same sentence structure
+        -quote verbatim as much as possible
+        - Do NOT add explanations.
         
-Dict:
-{dict}
+Context:
+{context}
 
+Question:
+{question}
 
 Only answer from the context.
 """
@@ -21,4 +23,5 @@ Only answer from the context.
     input=prompt
     )
     return response.output_text
+
 
