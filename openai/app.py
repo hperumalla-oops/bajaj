@@ -20,17 +20,21 @@ async def run_rag(request: RAGRequest):
     responses = []
     for q in request.questions:
         context = chunks.get(q, "")
-        con_dict[q] = context
+        lol = ask_openai(context, q)
+        answer = lol.strip() if lol else "No answer found"
+        responses.append(answer)
+        # con_dict[q] = context
         
-    responses = ask_openai(con_dict)
+    # responses = ask_openai(con_dict)
 
     #with open("question_context_map.json", "w", encoding="utf-8") as f:
         #json.dump(con_dict, f, ensure_ascii=False, indent=4)
 
     
-    return {"answers":responses}
+    return {"success": True, "answers": responses}
 
 if __name__ == "__main__":
     uvicorn.run("app:app", host="0.0.0.0", port=8000)
+
 
 
